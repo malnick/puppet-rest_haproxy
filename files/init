@@ -1,6 +1,6 @@
 #!/bin/bash
 BANNER=ROOT_PATH="/opt/rest_haproxy"
-PID_PATH="$ROOT_PATH/rest_haproxy.pid"
+PID_PATH="/opt/rest_haproxy/rest_haproxy.pid"
 LOG_PATH="/dev/null"
 
 is_running(){
