@@ -7,7 +7,7 @@ class rest_haproxy(
     ensure => directory,
   }
 
-  exec { "wget_rest_haproxy":
+  exec { 'wget_rest_haproxy':
     command     => "/usr/bin/wget -q ${source} -O ${path}",
     creates     => $path,
     notify      => Service['rest_haproxy'],
