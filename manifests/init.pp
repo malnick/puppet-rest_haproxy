@@ -1,7 +1,7 @@
 class rest_haproxy(
   $root   = '/opt/rest_haproxy/',
   $source = 'http://download.srcclr.com/rest_haproxy/rest_haproxy',
-  $path   = "${root}/rest_haproxy",
+  $path   = "/opt/rest_haproxy/rest_haproxy",
 ){
   file { $root:
     ensure => directory,
@@ -9,7 +9,7 @@ class rest_haproxy(
 
   exec { 'wget_rest_haproxy':
     command     => "/usr/bin/wget -q ${source} -O ${path}",
-#  creates     => $path,
+    creates     => $path,
     notify      => Service['rest_haproxy'],
   }
 
