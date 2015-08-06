@@ -28,10 +28,10 @@ start() {
     return 0
   else
     echo $BANNER 
-    $ROOT_PATH/./rest_haproxy > $LOG_PATH &
-    echo $? > $PID_PATH
+    nohup $ROOT_PATH/./rest_haproxy > $LOG_PATH &
+    echo $! > $PID_PATH
     echo "REST HaProxy Started"
-    echo "PID: $?"
+    echo "PID: $(cat $PID_PATH)"
     return 0
   fi
 }
