@@ -1,16 +1,5 @@
 #!/bin/bash
-BANNER=<<'EOF'
-     (       (                )      (                      
-     )\ )    )\ )  *   )   ( /(      )\ )                   
-    (()/((  (()/(` )  /(   )\())   )(()/((          ) (     
-     /(_))\  /(_))( )(_)) ((_)\ ( /( /(_))(   (  ( /( )\ )  
-    (_))((_)(_)) (_(_())   _((_))(_)|_))(()\  )\ )\()|()/(  
-    | _ \ __/ __||_   _|  | || ((_)_| _ \((_)((_|(_)\ )(_)) 
-    |   / _|\__ \  | |    | __ / _` |  _/ '_/ _ \ \ /| || | 
-    |_|_\___|___/  |_|    |_||_\__,_|_| |_| \___/_\_\ \_, | 
-                                                      |__/  
-EOF
-ROOT_PATH="/opt/rest_haproxy"
+BANNER=ROOT_PATH="/opt/rest_haproxy"
 PID_PATH="$ROOT_PATH/rest_haproxy.pid"
 LOG_PATH="/dev/null"
 
@@ -27,8 +16,18 @@ start() {
     echo "Service already running"
     return 0
   else
-    echo $BANNER 
-    nohup $ROOT_PATH/./rest_haproxy > $LOG_PATH &
+    cat <<'EOF'
+     (       (                )      (                      
+     )\ )    )\ )  *   )   ( /(      )\ )                   
+    (()/((  (()/(` )  /(   )\())   )(()/((          ) (     
+     /(_))\  /(_))( )(_)) ((_)\ ( /( /(_))(   (  ( /( )\ )  
+    (_))((_)(_)) (_(_())   _((_))(_)|_))(()\  )\ )\()|()/(  
+    | _ \ __/ __||_   _|  | || ((_)_| _ \((_)((_|(_)\ )(_)) 
+    |   / _|\__ \  | |    | __ / _` |  _/ '_/ _ \ \ /| || | 
+    |_|_\___|___/  |_|    |_||_\__,_|_| |_| \___/_\_\ \_, | 
+                                                      |__/  
+EOF
+    nohup $ROOT_PATH/./rest_haproxy > $LOG_PATH 2>&1 & 
     echo $! > $PID_PATH
     echo "REST HaProxy Started"
     echo "PID: $(cat $PID_PATH)"
