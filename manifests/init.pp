@@ -22,6 +22,7 @@ class rest_haproxy(
     ensure  => file,
     mode    => 0755,
     notify  => Service['rest_haproxy'],
+    source  => 'puppet:///modules/rest_haproxy/init',
   }
 
   service { 'rest_haproxy':
