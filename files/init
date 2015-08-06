@@ -66,4 +66,4 @@ case "$1" in
     echo "Options: start|stop|restart"
     ;;
 esac
-exit $@
+exit 0 
