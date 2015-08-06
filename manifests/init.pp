@@ -20,7 +20,7 @@ class rest_haproxy(
 
   file { '/etc/init.d/rest_haproxy':
     ensure  => file,
-    mode    => 0755,
+    mode    => '0755',
     notify  => Service['rest_haproxy'],
     source  => 'puppet:///modules/rest_haproxy/init',
   }
