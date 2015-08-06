@@ -16,9 +16,9 @@ LOG_PATH="/dev/null"
 
 is_running(){
   if [[ -e $PID_PATH ]]; then
-    return true
+    true
   else
-    return false
+    false
   fi
 }
 
