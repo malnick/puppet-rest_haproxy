@@ -1,7 +1,7 @@
 class rest_haproxy(
-  $root   = '/opt/rest_haproxy/'
-  $source = 'http://download.srcclr.com/rest_haproxy/rest_haproxy'
-  $path   = "${root}/rest_haproxy"
+  $root   = '/opt/rest_haproxy/',
+  $source = 'http://download.srcclr.com/rest_haproxy/rest_haproxy',
+  $path   = "${root}/rest_haproxy",
 ){
   file { $root:
     ensure => directory,
