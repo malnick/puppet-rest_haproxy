@@ -1,5 +1,5 @@
 #!/bin/bash
-BANNER=ROOT_PATH="/opt/rest_haproxy"
+ROOT_PATH="/opt/rest_haproxy"
 PID_PATH="/opt/rest_haproxy/rest_haproxy.pid"
 LOG_PATH="/dev/null"
 
