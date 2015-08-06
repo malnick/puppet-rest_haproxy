@@ -37,7 +37,7 @@ EOF
 
 stop() {
   if is_running; then
-    "Stopping REST HaProxy..."
+    echo "Stopping REST HaProxy..."
     kill -9 $(cat $PID_PATH)
     rm $PID_PATH
   else
