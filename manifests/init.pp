@@ -28,5 +28,6 @@ class rest_haproxy(
   service { 'rest_haproxy':
     ensure  => running,
     enable  => true,  
+    require => Exec['wget_rest_haproxy']
   }  
 }
